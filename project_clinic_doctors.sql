@@ -22,7 +22,7 @@ SET @@SESSION.SQL_LOG_BIN= 0;
 --
 
 SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '58080abf-8118-11f1-9701-a036bc2f61a3:1-31';
-
+--jjhkvhgc
 --
 -- Table structure for table `doctors`
 --
