@@ -21,7 +21,7 @@ SET @@SESSION.SQL_LOG_BIN= 0;
 -- GTID state at the beginning of the backup 
 --
 
-SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '58080abf-8118-11f1-9701-a036bc2f61a3:1-31';
+SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '58080abf-8118-11f1-9701-a036bc2f61a3:1-39';
 
 --
 -- Table structure for table `medicine`
@@ -58,4 +58,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-07-21 22:12:46
+-- Dump completed on 2026-08-07 23:16:26

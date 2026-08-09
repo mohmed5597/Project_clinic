@@ -21,7 +21,7 @@ SET @@SESSION.SQL_LOG_BIN= 0;
 -- GTID state at the beginning of the backup 
 --
 
-SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '58080abf-8118-11f1-9701-a036bc2f61a3:1-31';
+SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '58080abf-8118-11f1-9701-a036bc2f61a3:1-39';
 
 --
 -- Table structure for table `treatment`
@@ -34,12 +34,9 @@ CREATE TABLE `treatment` (
   `Treatment_ID` int NOT NULL AUTO_INCREMENT,
   `Appointment_ID` int DEFAULT NULL,
   `diagnosis` varchar(30) DEFAULT NULL,
-  `Medicine_ID` int DEFAULT NULL,
   PRIMARY KEY (`Treatment_ID`),
   KEY `Appointment_ID` (`Appointment_ID`),
-  KEY `Medicine_ID` (`Medicine_ID`),
-  CONSTRAINT `treatment_ibfk_1` FOREIGN KEY (`Appointment_ID`) REFERENCES `appointment` (`Apointment_ID`),
-  CONSTRAINT `treatment_ibfk_2` FOREIGN KEY (`Medicine_ID`) REFERENCES `medicine` (`Medicine_ID`)
+  CONSTRAINT `treatment_ibfk_1` FOREIGN KEY (`Appointment_ID`) REFERENCES `appointment` (`Apointment_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -49,7 +46,7 @@ CREATE TABLE `treatment` (
 
 LOCK TABLES `treatment` WRITE;
 /*!40000 ALTER TABLE `treatment` DISABLE KEYS */;
-INSERT INTO `treatment` VALUES (1,1,'flue',3),(2,2,'afk',4),(3,3,'pain',2),(4,4,'noop',5),(5,5,'afk',4);
+INSERT INTO `treatment` VALUES (1,1,'flue'),(2,2,'afk'),(3,3,'pain'),(4,4,'noop'),(5,5,'afk');
 /*!40000 ALTER TABLE `treatment` ENABLE KEYS */;
 UNLOCK TABLES;
 SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
@@ -63,5 +60,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-07-21 22:12:46
---87fpyc/ih
+-- Dump completed on 2026-08-07 23:16:26

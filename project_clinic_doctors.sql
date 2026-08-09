@@ -3,7 +3,7 @@
 -- Host: 127.0.0.1    Database: project_clinic
 -- ------------------------------------------------------
 -- Server version	9.7.1
---gklblhvg
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -21,8 +21,8 @@ SET @@SESSION.SQL_LOG_BIN= 0;
 -- GTID state at the beginning of the backup 
 --
 
-SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '58080abf-8118-11f1-9701-a036bc2f61a3:1-31';
---jjhkvhgc
+SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '58080abf-8118-11f1-9701-a036bc2f61a3:1-39';
+
 --
 -- Table structure for table `doctors`
 --
@@ -61,4 +61,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-07-21 22:12:45
+-- Dump completed on 2026-08-07 23:16:26

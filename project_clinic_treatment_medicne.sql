@@ -24,30 +24,31 @@ SET @@SESSION.SQL_LOG_BIN= 0;
 SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '58080abf-8118-11f1-9701-a036bc2f61a3:1-39';
 
 --
--- Table structure for table `patient`
+-- Table structure for table `treatment_medicne`
 --
 
-DROP TABLE IF EXISTS `patient`;
+DROP TABLE IF EXISTS `treatment_medicne`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `patient` (
-  `National_id` int NOT NULL,
-  `First_Name` varchar(30) DEFAULT NULL,
-  `Last_name` varchar(30) DEFAULT NULL,
-  `Insurance_ID` int DEFAULT NULL,
-  `Phone` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`National_id`)
+CREATE TABLE `treatment_medicne` (
+  `Treatment_ID` int NOT NULL,
+  `Medicine_ID` int NOT NULL,
+  `Quantity` int DEFAULT NULL,
+  PRIMARY KEY (`Treatment_ID`,`Medicine_ID`),
+  KEY `Medicine_ID` (`Medicine_ID`),
+  CONSTRAINT `treatment_medicne_ibfk_1` FOREIGN KEY (`Treatment_ID`) REFERENCES `treatment` (`Treatment_ID`),
+  CONSTRAINT `treatment_medicne_ibfk_2` FOREIGN KEY (`Medicine_ID`) REFERENCES `medicine` (`Medicine_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `patient`
+-- Dumping data for table `treatment_medicne`
 --
 
-LOCK TABLES `patient` WRITE;
-/*!40000 ALTER TABLE `patient` DISABLE KEYS */;
-INSERT INTO `patient` VALUES (1,'HUSSAM','ALAJMI',1001,'0512345678'),(2,'TURKI','ALAHMADI',1002,'0574621589'),(3,'HAMAD ','ALANAZI',1003,'0512345679'),(4,'ABDULRAHMAN','ALASMARI',1004,'0543211234'),(5,'ZAHER','ALBARIQI',1005,'0512445679');
-/*!40000 ALTER TABLE `patient` ENABLE KEYS */;
+LOCK TABLES `treatment_medicne` WRITE;
+/*!40000 ALTER TABLE `treatment_medicne` DISABLE KEYS */;
+INSERT INTO `treatment_medicne` VALUES (1,2,5),(1,4,3),(3,1,6),(3,3,7);
+/*!40000 ALTER TABLE `treatment_medicne` ENABLE KEYS */;
 UNLOCK TABLES;
 SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
